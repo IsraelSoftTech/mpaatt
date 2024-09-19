@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Login System</title>
+</head>
+<body>
+    <div id="app">
+        <div id="login-page">
+            <h2>MPASAT</h2>
+            <h2>Login</h2>
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <select id="account-type">
+                <option value="teacher">Teacher</option>
+                <option value="admin">Admin</option>
+            </select>
+            <button id="login-btn">Login</button>
+            <button id="create-account-link">Create Account</button>
+        </div>
+
+        <div id="create-account-page" style="display: none;">
+            <h2>Create Account</h2>
+            <input type="text" id="new-username" placeholder="Username" required>
+            <input type="password" id="new-password" placeholder="Password" required>
+            <select id="new-account-type">
+                <option value="teacher">Teacher</option>
+                <option value="admin">Admin</option>
+            </select>
+            <button id="create-account-btn">Create Account</button>
+        </div>
+
+        <div id="teacher-dashboard" style="display: none;">
+            <h2>Teacher Dashboard</h2>
+            <button id="mark-attendance-btn">Mark Attendance</button>
+            <button id="logout-btn-teacher">Logout</button>
+        </div>
+
+        <div id="admin-dashboard" style="display: none;">
+            <h2>Admin Dashboard</h2>
+            <button id="logout-btn-admin">Logout</button>
+            <table id="attendance-table">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Date</th>
+                        <th>Subject</th>
+                        <th>Class</th>
+                        <th>Entry Time</th>
+                        <th>Exit Time</th>
+                        <th>Periods</th> <!-- Added column for periods -->
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <button id="print-btn">Print Attendance</button>
+        </div>
+
+        <div id="attendance-form" style="display: none;">
+            <h2>Mark Attendance</h2>
+            <input type="text" id="attendance-name" placeholder="Name" disabled>
+            <input type="text" id="entry-time" placeholder="Entry Time" disabled>
+            <input type="text" id="date" placeholder="Date" disabled>
+            <input type="text" id="subject" placeholder="Subject" required>
+            <input type="text" id="class" placeholder="Class" required>
+            <input type="text" id="exit-time" placeholder="Exit Time" required>
+            <input type="number" id="periods" placeholder="Number of Periods" required>
+            <button id="submit-attendance-btn">Submit</button>
+        </div>
+
+        <div id="error-message" style="color: red; display: none;"></div>
+    </div>
+
+    <!-- Load Firebase App and necessary services -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="app.js"></script> <!-- Keep this at the end -->
+</body>
+</html>
+
