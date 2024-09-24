@@ -83,32 +83,6 @@ tbody tr:hover {
 
     table {
         display: block;
-        overflow-x: auto; /* Allows horizontal scrolling if needed */
-    }
-
-    tr {
-        display: flex;
-        flex-direction: column; /* Stack the rows vertically */
-        margin-bottom: 10px;
-        border: 1px solid #ddd; /* Optional: adds a border around each "row" */
-        padding: 10px;
-        background: #fff; /* Makes sure background is white */
-    }
-
-    th {
-        display: none; /* Hide header on small screens */
-    }
-
-    td {
-        border: none; /* Remove border between cells */
-        padding: 5px 0;
-        font-weight: bold; /* Make the text bold for better readability */
-    }
-
-    td::before {
-        content: attr(data-label); /* Use data-label for the label */
-        font-weight: normal;
-        display: inline-block;
-        margin-right: 10px; /* Space between label and value */
+        overflow-x: auto;
     }
 }
